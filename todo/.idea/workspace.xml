@@ -10,34 +10,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eec52742-ef62-4162-b62e-99cd2520d0a1" name="Default Changelist" comment="create master">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/todo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0002_alter_users_email.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0003_auto_20211117_2244.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0004_alter_users_email.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="eec52742-ef62-4162-b62e-99cd2520d0a1" name="Default Changelist" comment="create les1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +101,7 @@
       <workItem from="1637176786803" duration="2009000" />
       <workItem from="1637252345076" duration="127000" />
       <workItem from="1637252592868" duration="2431000" />
-      <workItem from="1637255493785" duration="1483000" />
+      <workItem from="1637255493785" duration="1787000" />
     </task>
     <task id="LOCAL-00001" summary="create master">
       <created>1637253357618</created>
@@ -137,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637253357618</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="create les1">
+      <created>1637257030558</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637257030558</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +137,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create master" />
-    <option name="LAST_COMMIT_MESSAGE" value="create master" />
+    <MESSAGE value="create les1" />
+    <option name="LAST_COMMIT_MESSAGE" value="create les1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1072" y="404" key="#Notifications" timestamp="1637006070899">
@@ -204,10 +185,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="879" y="131" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1637005834319" />
-    <state x="688" y="239" key="Vcs.Push.Dialog.v2" timestamp="1637253889923">
+    <state x="688" y="239" key="Vcs.Push.Dialog.v2" timestamp="1637257185172">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="688" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1637253889923" />
+    <state x="688" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1637257185172" />
     <state x="698" y="117" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1637177473893">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
