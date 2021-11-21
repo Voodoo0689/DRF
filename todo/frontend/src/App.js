@@ -4,6 +4,8 @@ import React from 'react'
 import axios from "axios";
 import {render} from "@testing-library/react";
 import UserList from "./components/Users";
+import Menu from "./components/Menu";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
     constructor(props) {
@@ -33,7 +35,9 @@ class App extends React.Component {
 
         return (
             <div>
+                <Menu/>
                 <UserList users={this.state.users}/>
+                <Footer/>
             </div>
 
 
