@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -27,11 +26,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CORS_ALLOWED_ORIGINS =[
+CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
-
 
 # Application definition
 
@@ -45,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'corsheaders',
+    'project',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todo.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -108,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -122,7 +119,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -132,3 +128,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer']
+}
+
+if DEBUG:
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].append('rest_framework.renderers.BrowsableAPIRenderer')
