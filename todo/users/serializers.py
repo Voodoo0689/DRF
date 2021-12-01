@@ -6,7 +6,8 @@ class UsersModelSerializer(ModelSerializer):
     class Meta:
         model = Users
         # fields = '__all__'
-        fields = ('username',
+        fields = ('id',
+                  'username',
                   'first_name',
                   'last_name',
                   'email')
