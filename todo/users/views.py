@@ -23,6 +23,7 @@ class UsersModelViewSet(ModelViewSet):
     queryset = Users.objects.all()
     serializer_class = UsersModelSerializer
 
+
 # class UsersModelViewSet(ViewSet):
 #     permission_classes = [StaffOnly]
 #     renderer_classes = [JSONRenderer, BrowsableAPIRenderer]

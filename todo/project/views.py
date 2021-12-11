@@ -20,7 +20,7 @@ class ProjectModelViewSet(viewsets.ModelViewSet):
     renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
     queryset = Project.objects.all()
     serializer_class = ProjectModelSerializer
-    pagination_class = ProjectLimitOffsetPagination
+    # pagination_class = ProjectLimitOffsetPagination
     filterset_class = ProjectFilter
 
     # При фильтрации выдаёт пустой список. Не понял почему.
@@ -36,7 +36,7 @@ class TodoModelViewSet(viewsets.ModelViewSet):
     renderer_classes = [JSONRenderer, BrowsableAPIRenderer]
     queryset = Todo.objects.all()
     serializer_class = TodoModelSerializer
-    pagination_class = TodoLimitOffsetPagination
+    # pagination_class = TodoLimitOffsetPagination
     filterset_fields = ['project']
 
     def destroy(self, request, pk=None, *args, **kwargs):
