@@ -37,7 +37,7 @@ class TestUserViewSet(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_edit_admin(self):
-        user = User.objects.create(username='Push', email='qwe@qw.ru', is_superuser=True)
+        user = User.objects.create(username='Push', email='qwe@qw.ru')
         client = APIClient()
         admin = User.objects.create_superuser('admin', 'admin@admin.com', '123')
         client.login(username='admin', password='123')

@@ -1,13 +1,14 @@
 # from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
+from rest_framework.generics import ListAPIView
 from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer
 # from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet, ModelViewSet
 
 from .models import Users
-from .serializers import UsersModelSerializer
+from .serializers import UsersModelSerializer, UserSerializerAugmented
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, BasePermission
 
@@ -21,8 +22,12 @@ class UsersModelViewSet(ModelViewSet):
     # renderer_classes = [JSONRenderer]
     # permission_classes = [StaffOnly]
     queryset = Users.objects.all()
-    serializer_class = UsersModelSerializer
+    # serializer_class = UsersModelSerializer
 
+    def get_serializer_class(self):
+        if self.request.version == 'v2':
+            return UserSerializerAugmented
+        return UsersModelSerializer
 
 # class UsersModelViewSet(ViewSet):
 #     permission_classes = [StaffOnly]

@@ -14,11 +14,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from rest_framework import permissions
+from rest_framework.permissions import AllowAny
 from rest_framework.routers import DefaultRouter
 from project.views import ProjectModelViewSet, TodoModelViewSet
 from users.views import UsersModelViewSet
 from rest_framework.authtoken import views
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Todo",
+      default_version='v1',
+      description="Documentation to out project",
+      contact=openapi.Contact(email="voodoo06.89@mail.ru"),
+      license=openapi.License(name="Free License"),
+   ),
+   public=True,
+   permission_classes=(AllowAny,)
+)
+
+
 
 router = DefaultRouter()
 router.register('users', UsersModelViewSet, basename='users')
@@ -29,5 +47,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api=auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),
-    path('api-token-auth/', views.obtain_auth_token)
+    path('api-token-auth/', views.obtain_auth_token),
+    # path('api/<str:version>/users/', UsersModelViewSet.as_view()),
+
+    path('swagger/', schema_view.with_ui('swagger')),
+    path('swagger/<str:format>/', schema_view.without_ui()),
+    path('redoc/', schema_view.with_ui('redoc')),
+
 ]
