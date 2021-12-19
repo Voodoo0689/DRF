@@ -14,6 +14,8 @@ import Not_found404 from "./components/Not_found404";
 import Users_in_project from "./components/Users_in_project";
 import LoginForm from "./components/LoginForm";
 import Cookies from "universal-cookie";
+import ProjectForm from "./components/ProjectForm";
+import TodoForm from "./components/TodoForm";
 
 class App extends React.Component {
     constructor(props) {
@@ -25,6 +27,78 @@ class App extends React.Component {
             'token':'',
 
         }
+    }
+     createProject(name, link, users){
+        const headers = this.get_headers()
+        const data = {name: name, link: link, users: users}
+        axios.post(`http://127.0.0.1:8000/api/project/`,data,{headers}).then(
+            response => {
+
+
+                this.load_data()
+            }
+        ).catch(error => {
+            console.log(error)
+            this.setState({projects:[]})
+        })
+
+
+     }
+
+
+
+    deleteProject(id){
+
+        const headers = this.get_headers()
+        console.log(headers)
+        console.log(id)
+        axios.delete(`http://127.0.0.1:8000/api/project/${id}`,{headers}).then(
+            response => {
+
+                this.load_data()
+            }
+        ).catch(error => {
+            console.log(error)
+            this.setState({projects:[]})
+        })
+
+
+    }
+
+     createTodo(text, date,is_active, project, create_user){
+        const headers = this.get_headers()
+        const data = {text:text, date:date, is_active:is_active, project:project, create_user:create_user}
+        axios.post(`http://127.0.0.1:8000/api/todo/`,data,{headers}).then(
+            response => {
+
+                this.load_data()
+            }
+        ).catch(error => {
+            console.log(error)
+            this.setState({todos:[]})
+        })
+
+
+     }
+
+
+
+    deleteTodo(id){
+
+        const headers = this.get_headers()
+        console.log(headers)
+        console.log(id)
+        axios.delete(`http://127.0.0.1:8000/api/todo/${id}`,{headers}).then(
+            response => {
+
+                this.load_data()
+            }
+        ).catch(error => {
+            console.log(error)
+            this.setState({todos:[]})
+        })
+
+
     }
 
 
@@ -134,6 +208,24 @@ class App extends React.Component {
                         <Route exact path='/' component={() => <UserList users={this.state.users}/>} />
                         <Route exact path='/projects' component={() => <ProjectList projects={this.state.projects}/>} />
                         <Route exact path='/todo' component={() => <TodoList todos={this.state.todos}/>} />
+
+                        <Route exact path='/projects' component={() => <ProjectList projects={this.state.projects}
+                                                                              deleteProject={(id) => this.deleteProject(id)}/>}/>
+
+
+                        <Route exact path='/projects/create' component={() =>
+                             <ProjectForm users={this.state.users} createProject={(name, link, users) => this.createProject(name, link, users)}/>}/>
+
+
+                        <Route exact path='/todo' component={() => <TodoList todos={this.state.todos}
+                                                                              deleteTodo={(id) => this.deleteTodo(id)}/>}/>
+
+
+                        <Route exact path='/todo/create' component={() =>
+                             <TodoForm create_user={this.state.create_user} project ={this.state.project}createTodo=
+                                 {(text, date, is_active, project, create_user) =>
+                                 this.createTodo(text, date,is_active, project, create_user)}/>}/>
+
                         <Route exact path='/login' component={() => <LoginForm
                             get_token={(username, password) => this.get_token(username, password)}/>} />
                         <Route path='/user/:id'>
